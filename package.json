@@ -9,6 +9,9 @@
   },
   "author": "browniefed",
   "license": "ISC",
+  "now": {
+    "alias": "reactcoach.com"
+  },
   "dependencies": {
     "glamor": "^2.20.39",
     "glamorous": "^4.1.0",
