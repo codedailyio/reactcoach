@@ -6,7 +6,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "deploy": "now"
+    "deploy": "now -e SERVER=@server -e DOMAIN=@domain -e STRIPE_PUBLIC_KEY=@stripe_public_key"
   },
   "author": "browniefed",
   "license": "ISC",
@@ -14,9 +14,12 @@
     "alias": "reactcoach.com"
   },
   "dependencies": {
+    "dotenv": "^4.0.0",
+    "exenv": "^1.2.2",
     "glamor": "^2.20.39",
     "glamorous": "^4.1.0",
     "isomorphic-fetch": "^2.2.1",
+    "jwt-decode": "^2.2.0",
     "next": "^3.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
