@@ -27,7 +27,7 @@ class ReactCoach extends Component {
           screencasts, and interactive demos.
         </p>
         <div>
-          <form onSubmit={this.handleNewsletter}>
+          {!this.state.thanks && <form onSubmit={this.handleNewsletter}>
             <input
               type="email"
               required
@@ -35,7 +35,10 @@ class ReactCoach extends Component {
               onChange={e => this.setState({ email: e.target.value })}
             />
             <button type="submit">Sign Up</button>
-          </form>
+          </form>}
+          {
+            this.state.thanks && <h2>Thank you for signing up!</h2>
+          }
         </div>
       </div>
     );
