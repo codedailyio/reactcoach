@@ -10,6 +10,8 @@
   "author": "browniefed",
   "license": "ISC",
   "dependencies": {
+    "glamor": "^2.20.39",
+    "glamorous": "^4.1.0",
     "isomorphic-fetch": "^2.2.1",
     "next": "^3.0.3",
     "react": "^15.6.1",

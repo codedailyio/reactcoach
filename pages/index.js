@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { rehydrate, css } from 'glamor'
+import glamorous from 'glamorous'
+
 
 class ReactCoach extends Component {
   render() {
