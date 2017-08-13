@@ -5,6 +5,8 @@ import glamorous from "glamorous";
 import { registerNewsLetter } from "../api";
 
 import Header from "../components/header";
+import { Standard } from "../components/button";
+import { Input, Spacer } from "../components/form";
 
 const Container = glamorous.div({
   maxWidth: "1170px",
@@ -39,13 +41,16 @@ class ReactCoach extends Component {
         <div>
           {!this.state.thanks &&
             <form onSubmit={this.handleNewsletter}>
-              <input
-                type="email"
-                required
-                value={this.state.email}
-                onChange={e => this.setState({ email: e.target.value })}
-              />
-              <button type="submit">Sign Up</button>
+              <Spacer right>
+                <Input
+                  placeholder="Email"
+                  type="email"
+                  required
+                  value={this.state.email}
+                  onChange={e => this.setState({ email: e.target.value })}
+                />
+              </Spacer>
+              <Standard type="submit">Sign Up</Standard>
             </form>}
           {this.state.thanks && <h2>Thank you for signing up!</h2>}
         </div>
