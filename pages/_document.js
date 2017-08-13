@@ -37,7 +37,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
           />
-          <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Tenor+Sans" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Work+Sans" rel="stylesheet" />
           <link href="/static/styles.css" rel="stylesheet" />
 
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
