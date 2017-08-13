@@ -31,10 +31,19 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>React Coach</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          />
+
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
         </Head>
         <body>
           <Main />
+
+          <script src="https://checkout.stripe.com/checkout.js" />
           <NextScript />
         </body>
       </html>
