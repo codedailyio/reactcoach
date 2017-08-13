@@ -6,6 +6,7 @@ export const Input = glamorous.input({
   border: "1px solid #DDD",
   fontSize: "1.2rem",
   borderRadius: "5px",
+  fontFamily: "inherit",
 });
 
 export const Spacer = glamorous.div(

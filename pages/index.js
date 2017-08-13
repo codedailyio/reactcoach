@@ -7,11 +7,22 @@ import { registerNewsLetter } from "../api";
 import Header from "../components/header";
 import { Standard } from "../components/button";
 import { Input, Spacer } from "../components/form";
+import { Title, Subtitle, Paragraph } from "../components/heading";
 
 const Container = glamorous.div({
   maxWidth: "1170px",
   width: "100%",
   margin: "0 auto",
+});
+
+const HeadTitle = glamorous(Title)({
+  textAlign: "center",
+});
+
+const HeadParagraph = glamorous(Paragraph)({
+  textAlign: "center",
+  maxWidth: "960px",
+  margin: "15px auto",
 });
 
 class ReactCoach extends Component {
@@ -33,11 +44,11 @@ class ReactCoach extends Component {
       <Container>
         <Header />
 
-        <h2>Welcome to React Coach</h2>
-        <p>
+        <HeadTitle>Welcome to React Coach</HeadTitle>
+        <HeadParagraph>
           We'll teach all you need to know about React and the ecosystem through tutorials,
           screencasts, and interactive demos.
-        </p>
+        </HeadParagraph>
         <div>
           {!this.state.thanks &&
             <form onSubmit={this.handleNewsletter}>

@@ -12,6 +12,7 @@ export const Standard = glamorous.button({
   fontSize: "1.2rem",
   transition: "all .5s ease",
   cursor: "pointer",
+  fontFamily: "inherit",
   ":hover": {
     backgroundColor: "#333",
   },
