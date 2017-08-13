@@ -5,7 +5,7 @@ import { red, dark } from "../colors";
 
 export const Standard = glamorous.button({
   borderRadius: "30px",
-  padding: "11px 30px",
+  padding: "10px 15px",
   backgroundColor: red,
   border: 0,
   color: "#FFF",

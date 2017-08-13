@@ -25,6 +25,14 @@ const HeadParagraph = glamorous(Paragraph)({
   margin: "15px auto",
 });
 
+const Top = glamorous.div({
+  padding: "75px 0",
+});
+
+const Center = glamorous.div({
+  textAlign: "center",
+});
+
 class ReactCoach extends Component {
   state = {
     email: "",
@@ -43,15 +51,19 @@ class ReactCoach extends Component {
     return (
       <Container>
         <Header />
-
-        <HeadTitle>Welcome to React Coach</HeadTitle>
-        <HeadParagraph>
-          We'll teach all you need to know about React and the ecosystem through tutorials,
-          screencasts, and interactive demos.
-        </HeadParagraph>
-        <div>
+        <Top>
+          <HeadTitle>Welcome to React Coach</HeadTitle>
+          <HeadParagraph>
+            We'll teach all you need to know about React and the ecosystem through tutorials,
+            screencasts, and interactive demos.
+          </HeadParagraph>
+        </Top>
+        <Center>
           {!this.state.thanks &&
             <form onSubmit={this.handleNewsletter}>
+              <div>
+                <HeadParagraph>Get more information when we launch.</HeadParagraph>
+              </div>
               <Spacer right>
                 <Input
                   placeholder="Email"
@@ -63,8 +75,8 @@ class ReactCoach extends Component {
               </Spacer>
               <Standard type="submit">Sign Up</Standard>
             </form>}
-          {this.state.thanks && <h2>Thank you for signing up!</h2>}
-        </div>
+          {this.state.thanks && <Subtitle>Thank you for signing up!</Subtitle>}
+        </Center>
       </Container>
     );
   }
