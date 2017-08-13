@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 3003",
     "build": "next build",
     "start": "next start",
     "deploy": "now -e SERVER=@server -e DOMAIN=@domain -e STRIPE_PUBLIC_KEY=@stripe_public_key"

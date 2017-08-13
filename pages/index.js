@@ -4,6 +4,8 @@ import glamorous from "glamorous";
 
 import { registerNewsLetter } from "../api";
 
+import Header from "../components/header";
+
 class ReactCoach extends Component {
   state = {
     email: "",
@@ -21,6 +23,7 @@ class ReactCoach extends Component {
   render() {
     return (
       <div>
+        <Header />
         <h2>Welcome to React Coach</h2>
         <p>
           We'll teach all you need to know about React and the ecosystem through tutorials,
