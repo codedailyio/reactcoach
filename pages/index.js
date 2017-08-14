@@ -3,11 +3,14 @@ import { rehydrate, css } from "glamor";
 import glamorous from "glamorous";
 
 import { registerNewsLetter } from "../api";
+import ExecutionEnvironment from "exenv";
 
-import Header from "../components/header";
 import { Standard } from "../components/button";
 import { Input, Spacer } from "../components/form";
 import { Title, Subtitle, Paragraph } from "../components/heading";
+
+import Header from "../components/header";
+import ContentSection from "../sections/content";
 
 const Container = glamorous.div({
   maxWidth: "1170px",
@@ -33,11 +36,23 @@ const Center = glamorous.div({
   textAlign: "center",
 });
 
+if (ExecutionEnvironment.canUseDOM && process.env.NODE_ENV === "production") {
+  ReactGA.initialize(process.env.GA_KEY);
+  ReactGA.plugin.require("ecommerce");
+}
+
 class ReactCoach extends Component {
   state = {
     email: "",
     thanks: false,
   };
+  componentDidMount() {
+    if (process.env.NODE_ENV === "production") {
+      ReactGA.pageview(window.location.pathname);
+      ReactGA.set({ page: window.location.pathname });
+    }
+  }
+  
   handleNewsletter = async e => {
     e.preventDefault();
 
@@ -76,6 +91,10 @@ class ReactCoach extends Component {
               <Standard type="submit">Sign Up</Standard>
             </form>}
           {this.state.thanks && <Subtitle>Thank you for signing up!</Subtitle>}
+
+          <ContentSection
+
+          />
         </Center>
       </Container>
     );
