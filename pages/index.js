@@ -4,6 +4,7 @@ import glamorous from "glamorous";
 
 import { registerNewsLetter } from "../api";
 import ExecutionEnvironment from "exenv";
+import ReactGA from "react-ga";
 
 import { Standard } from "../components/button";
 import { Input, Spacer } from "../components/form";
@@ -52,7 +53,7 @@ class ReactCoach extends Component {
       ReactGA.set({ page: window.location.pathname });
     }
   }
-  
+
   handleNewsletter = async e => {
     e.preventDefault();
 
@@ -91,10 +92,6 @@ class ReactCoach extends Component {
               <Standard type="submit">Sign Up</Standard>
             </form>}
           {this.state.thanks && <Subtitle>Thank you for signing up!</Subtitle>}
-
-          <ContentSection
-
-          />
         </Center>
       </Container>
     );
