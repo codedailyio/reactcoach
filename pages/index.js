@@ -55,7 +55,7 @@ class ReactCoach extends Component {
           <HeadTitle>Welcome to React Coach</HeadTitle>
           <HeadParagraph>
             We'll teach all you need to know about React and the ecosystem through tutorials,
-            screencasts, and interactive demos.
+            screencasts, and project builds.
           </HeadParagraph>
         </Top>
         <Center>
