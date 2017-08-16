@@ -37,6 +37,20 @@ const Center = glamorous.div({
   textAlign: "center",
 });
 
+const Form = glamorous.div({
+  "@media(max-width: 768px)": {
+    display: "flex",
+    flexDirection: "column",
+  },
+});
+
+const StandardButton = glamorous(Standard)({
+  "@media(max-width: 768px)": {
+    margin: "15px",
+    width: "calc(100% - 30px)",
+  },
+});
+
 if (ExecutionEnvironment.canUseDOM && process.env.NODE_ENV === "production") {
   ReactGA.initialize(process.env.GA_KEY);
   ReactGA.plugin.require("ecommerce");
@@ -89,7 +103,7 @@ class ReactCoach extends Component {
                   onChange={e => this.setState({ email: e.target.value })}
                 />
               </Spacer>
-              <Standard type="submit">Sign Up</Standard>
+              <StandardButton type="submit">Sign Up</StandardButton>
             </form>}
           {this.state.thanks && <Subtitle>Thank you for signing up!</Subtitle>}
         </Center>
