@@ -18,6 +18,7 @@ const Left = glamorous.div({
 
 const Logo = glamorous.img({
   width: "200px",
+  height: "100%",
 });
 
 class Header extends Component {
