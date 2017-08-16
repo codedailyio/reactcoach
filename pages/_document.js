@@ -31,8 +31,8 @@ export default class MyDocument extends Document {
         <Head>
           <title>React Coach</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+          <link rel="shortcut icon" href="/static/ico/favicon.ico" type="image/x-icon" />
+          <link rel="icon" href="/static/ico/favicon.ico" type="image/x-icon" />
           <link rel="apple-touch-icon" sizes="57x57" href="/static/ico/apple-icon-57x57.png" />
           <link rel="apple-touch-icon" sizes="60x60" href="/static/ico/apple-icon-60x60.png" />
           <link rel="apple-touch-icon" sizes="72x72" href="/static/ico/apple-icon-72x72.png" />
