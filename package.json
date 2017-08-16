@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "next -p 3003",
+    "dev": "PORT=3003 node server.js",
     "build": "next build",
     "start": "next start",
     "deploy": "now -e SERVER=@server -e DOMAIN=@domain -e STRIPE_PUBLIC_KEY=@stripe_public_key"
@@ -16,11 +16,14 @@
   "dependencies": {
     "dotenv": "^4.0.0",
     "exenv": "^1.2.2",
-    "glamor": "^2.20.39",
-    "glamorous": "^4.1.0",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.2.0",
+    "good": "^7.2.0",
+    "good-console": "^6.4.0",
+    "hapi": "^16.5.2",
     "isomorphic-fetch": "^2.2.1",
     "jwt-decode": "^2.2.0",
-    "next": "^3.0.3",
+    "next": "^3.0.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-ga": "^2.2.0"
