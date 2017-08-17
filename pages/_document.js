@@ -31,6 +31,15 @@ export default class MyDocument extends Document {
         <Head>
           <title>React Coach</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta property="og:title" content="React Coach" />
+          <meta property="og:url" content="https://reactcoach.com" />
+          <meta property="og:image" content="https://codedaily.now.sh/courses/reactcoach.png" />
+          <meta property="og:description" content="We'll teach all you need to know about React and the ecosystem through tutorials, screencasts, and project builds." />
+          <meta name="twitter:card" content="summary_large_image"/>
+          <meta name="twitter:site" content="@reactcoach"/>
+          <meta name="twitter:title" content="React Coach"/>
+          <meta name="twitter:description" content="We'll teach all you need to know about React and the ecosystem through tutorials, screencasts, and project builds."/>
+          <meta name="twitter:image" content="https://codedaily.now.sh/courses/reactcoach.png"/>
           <link rel="shortcut icon" href="/static/ico/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="/static/ico/favicon.ico" type="image/x-icon" />
           <link rel="apple-touch-icon" sizes="57x57" href="/static/ico/apple-icon-57x57.png" />

@@ -107,7 +107,6 @@ class ReactCoach extends Component {
             </form>}
           {this.state.thanks && <Subtitle>Thank you for signing up!</Subtitle>}
         </Center>
-        <ContentSection />
       </Container>
     );
   }
