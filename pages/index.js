@@ -13,6 +13,8 @@ import { Title, Subtitle, Paragraph } from "../components/heading";
 import Header from "../components/header";
 import ContentSection from "../sections/content";
 
+import { Follow } from "react-twitter-widgets";
+
 const Container = glamorous.div({
   maxWidth: "1170px",
   width: "100%",
@@ -51,6 +53,21 @@ const StandardButton = glamorous(Standard)({
   },
 });
 
+const FollowerSpacing = glamorous.div({
+  marginBottom: "30px",
+})
+
+const InlineFollower = glamorous.div(
+  {
+    display: "inline-block",
+  },
+  ({ margin }) => {
+    return {
+      marginLeft: margin ? "15px" : 0,
+    };
+  }
+);
+
 if (ExecutionEnvironment.canUseDOM && process.env.NODE_ENV === "production") {
   ReactGA.initialize(process.env.GA_KEY);
   ReactGA.plugin.require("ecommerce");
@@ -88,7 +105,17 @@ class ReactCoach extends Component {
             screencasts, and project builds.
           </HeadParagraph>
         </Top>
+
         <Center>
+          <h3>Follow me on Twitter</h3>
+          <FollowerSpacing>
+            <InlineFollower>
+              <Follow username="browniefed" />
+            </InlineFollower>
+            <InlineFollower margin >
+              <Follow username="reactcoach" />
+            </InlineFollower>
+          </FollowerSpacing>
           {!this.state.thanks &&
             <form onSubmit={this.handleNewsletter}>
               <div>
