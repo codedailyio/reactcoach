@@ -55,10 +55,7 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/static/ico/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-          />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
           <link
             href="https://fonts.googleapis.com/css?family=Rubik:400,700|Work+Sans"
             rel="stylesheet"

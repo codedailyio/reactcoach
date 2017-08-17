@@ -3,66 +3,71 @@ import glamorous from "glamorous";
 
 import { dark, red } from "../colors";
 
+import { Square, Title, Paragraph, Number } from "../components/square";
+
 const Wrapper = glamorous.div({
+  padding: "1rem 0",
   width: "100%",
-  display: "inline-block",
-  border: "1px solid #DDD",
-  minHeight: "40vh",
-  marginTop: "30px",
-  textAlign: "left",
-});
-
-const Title = glamorous.h2({
-  display: "inline-block",
-  fontSize: "2rem",
-  color: dark,
-  marginLeft: "10px",
-});
-
-const SubTitle = glamorous.h3({
-  color: dark,
-  fontSize: "1.5rem",
-});
-
-const ListItem = glamorous.div({
   display: "flex",
-  alignItems: "center",
-  padding: "15px",
-  borderBottom: "1px solid #DDD",
-  cursor: "pointer",
-  ":hover": {
-    backgroundColor: "#f9f9f9",
+  flexWrap: "wrap",
+  "@media(max-width: 768px)": {
+    flexDirection: "column",
   },
 });
 
-const SubListItem = glamorous(ListItem)({
-  padding: "15px 0 15px 30px",
+const FlexSquare = glamorous(Square)({
+  width: "calc( (100% / 3) - 20px)",
+  margin: "10px",
+  // "@media(max-width: 768px)": {
+  //   width: "auto",
+  // },
 });
 
-const IndexNumber = glamorous.div({
-  display: "inline-block",
-  border: `1px solid ${red}`,
-  borderRadius: "50%",
-  padding: "3px 5px",
-});
+const contents = [
+  {
+    type: "course",
+    name: "Introduction",
+    description:
+      "Get started with the React basics. Including understanding JSX, State, Props, and Life Cycle methods.",
+  },
+  {
+    type: "exercise",
+    name: "Shopping Cart",
+    description:
+      "Lets build a shopping cart with our new React skills. We'll focus on component boundaries and using state.",
+  },
+  {
+    type: "course",
+    name: "All About Children",
+    description:
+      "Understand children prop in React and how we can use it to compose complex components.",
+  },
+  {
+    type: "exercise",
+    name: "Tab Builder",
+    description: "We'll build out a tab system where state is abstracted away and we manipulate our children for a clean API.",
+  },
+];
 
 class Content extends Component {
   render() {
     return (
       <Wrapper>
-        <ListItem>
-          <IndexNumber>1</IndexNumber>
-          <Title>Introduction</Title>
-        </ListItem>
-        <SubListItem>
-          <SubTitle>Why React?</SubTitle>
-        </SubListItem>
-        <SubListItem>
-          <SubTitle>JSX</SubTitle>
-        </SubListItem>
-        <SubListItem>
-          <SubTitle>Props</SubTitle>
-        </SubListItem>
+        {contents.map(({ type, name, description }, index) => {
+          return (
+            <FlexSquare>
+              <Title>
+                <Number>
+                  {index + 1}
+                </Number>
+                {name}
+              </Title>
+              <Paragraph>
+                {description}
+              </Paragraph>
+            </FlexSquare>
+          );
+        })}
       </Wrapper>
     );
   }
