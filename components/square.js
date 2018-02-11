@@ -1,10 +1,10 @@
 import React from "react";
-import glamorous from "glamorous";
+import styled from "react-emotion";
 
 import { primary, secondary } from "../font";
 import { dark, red } from "../colors";
 
-export const Square = glamorous.div({
+export const Square = styled.div({
   backgroundColor: "#FFF",
   boxShadow: "0 6px 5px 0px rgba(0,0,0,0.06)",
   padding: "20px",
@@ -20,7 +20,7 @@ export const Square = glamorous.div({
   }
 });
 
-export const Title = glamorous.h3({
+export const Title = styled.h3({
   color: dark,
   fontFamily: primary,
   fontWeight: "600",
@@ -32,7 +32,7 @@ export const Title = glamorous.h3({
   marginBottom: '.5rem',
 });
 
-export const Number = glamorous.div({
+export const Number = styled.div({
   display: "inline",
   color: red,
   border: `2px solid ${red}`,
@@ -42,7 +42,7 @@ export const Number = glamorous.div({
   borderRadius: "100px",
 });
 
-export const Paragraph = glamorous.p({
+export const Paragraph = styled.p({
   color: dark,
   fontFamily: secondary,
   fontSize: "19px",

@@ -1,10 +1,11 @@
 import Document, { Head, Main, NextScript } from "next/document";
-import { renderStatic } from "glamor/server";
+import { extractCritical } from "emotion-server";
+import { hydrate } from "react-emotion";
 
 export default class MyDocument extends Document {
-  static async getInitialProps({ renderPage }) {
+  static getInitialProps({ renderPage }) {
     const page = renderPage();
-    const styles = renderStatic(() => page.html);
+    const styles = extractCritical(page.html);
     return { ...page, ...styles };
   }
 
@@ -12,7 +13,7 @@ export default class MyDocument extends Document {
     super(props);
     const { __NEXT_DATA__, ids } = props;
     if (ids) {
-      __NEXT_DATA__.ids = this.props.ids;
+      __NEXT_DATA__.ids = ids;
     }
   }
 
@@ -21,7 +22,7 @@ export default class MyDocument extends Document {
     // Has to run before any `style()` calls
     // '__NEXT_DATA__.ids' is set in '_document.js'
     if (typeof window !== "undefined") {
-      rehydrate(window.__NEXT_DATA__.ids);
+      hydrate(window.__NEXT_DATA__.ids);
     }
   }
 
@@ -34,12 +35,18 @@ export default class MyDocument extends Document {
           <meta property="og:title" content="React Coach" />
           <meta property="og:url" content="https://reactcoach.com" />
           <meta property="og:image" content="https://codedaily.now.sh/courses/reactcoach.png" />
-          <meta property="og:description" content="We'll teach all you need to know about React and the ecosystem through tutorials, screencasts, and project builds." />
-          <meta name="twitter:card" content="summary_large_image"/>
-          <meta name="twitter:site" content="@reactcoach"/>
-          <meta name="twitter:title" content="React Coach"/>
-          <meta name="twitter:description" content="We'll teach all you need to know about React and the ecosystem through tutorials, screencasts, and project builds."/>
-          <meta name="twitter:image" content="https://codedaily.now.sh/courses/reactcoach.png"/>
+          <meta
+            property="og:description"
+            content="We'll teach all you need to know about React and the ecosystem through tutorials, screencasts, and project builds."
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@reactcoach" />
+          <meta name="twitter:title" content="React Coach" />
+          <meta
+            name="twitter:description"
+            content="We'll teach all you need to know about React and the ecosystem through tutorials, screencasts, and project builds."
+          />
+          <meta name="twitter:image" content="https://codedaily.now.sh/courses/reactcoach.png" />
           <link rel="shortcut icon" href="/static/ico/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="/static/ico/favicon.ico" type="image/x-icon" />
           <link rel="apple-touch-icon" sizes="57x57" href="/static/ico/apple-icon-57x57.png" />
@@ -64,7 +71,10 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/static/ico/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+          />
           <link
             href="https://fonts.googleapis.com/css?family=Rubik:400,700|Work+Sans"
             rel="stylesheet"

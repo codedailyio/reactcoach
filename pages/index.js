@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { rehydrate, css } from "glamor";
-import glamorous from "glamorous";
+import styled from "react-emotion";
 
 import { registerNewsLetter } from "../api";
 import ExecutionEnvironment from "exenv";
@@ -15,49 +15,49 @@ import ContentSection from "../sections/content";
 
 import { Follow } from "react-twitter-widgets";
 
-const Container = glamorous.div({
+const Container = styled.div({
   maxWidth: "1170px",
   width: "100%",
   margin: "0 auto",
 });
 
-const HeadTitle = glamorous(Title)({
+const HeadTitle = styled(Title)({
   textAlign: "center",
 });
 
-const HeadParagraph = glamorous(Paragraph)({
+const HeadParagraph = styled(Paragraph)({
   textAlign: "center",
   maxWidth: "960px",
   margin: "15px auto",
 });
 
-const Top = glamorous.div({
+const Top = styled.div({
   padding: "75px 0",
 });
 
-const Center = glamorous.div({
+const Center = styled.div({
   textAlign: "center",
 });
 
-const Form = glamorous.div({
+const Form = styled.div({
   "@media(max-width: 768px)": {
     display: "flex",
     flexDirection: "column",
   },
 });
 
-const StandardButton = glamorous(Standard)({
+const StandardButton = styled(Standard)({
   "@media(max-width: 768px)": {
     margin: "15px",
     width: "calc(100% - 30px)",
   },
 });
 
-const FollowerSpacing = glamorous.div({
+const FollowerSpacing = styled.div({
   marginBottom: "30px",
-})
+});
 
-const InlineFollower = glamorous.div(
+const InlineFollower = styled.div(
   {
     display: "inline-block",
   },
@@ -65,7 +65,7 @@ const InlineFollower = glamorous.div(
     return {
       marginLeft: margin ? "15px" : 0,
     };
-  }
+  },
 );
 
 if (ExecutionEnvironment.canUseDOM && process.env.NODE_ENV === "production") {
@@ -112,11 +112,11 @@ class ReactCoach extends Component {
             <InlineFollower>
               <Follow username="browniefed" />
             </InlineFollower>
-            <InlineFollower margin >
+            <InlineFollower margin>
               <Follow username="reactcoach" />
             </InlineFollower>
           </FollowerSpacing>
-          {!this.state.thanks &&
+          {!this.state.thanks && (
             <form onSubmit={this.handleNewsletter}>
               <div>
                 <HeadParagraph>Get more information when we launch.</HeadParagraph>
@@ -131,7 +131,8 @@ class ReactCoach extends Component {
                 />
               </Spacer>
               <StandardButton type="submit">Sign Up</StandardButton>
-            </form>}
+            </form>
+          )}
           {this.state.thanks && <Subtitle>Thank you for signing up!</Subtitle>}
         </Center>
       </Container>

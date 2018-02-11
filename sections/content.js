@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import glamorous from "glamorous";
+import styled from "react-emotion";
 
 import { dark, red } from "../colors";
 
 import { Square, Title, Paragraph, Number } from "../components/square";
 
-const Wrapper = glamorous.div({
+const Wrapper = styled.div({
   padding: "1rem 0",
   width: "100%",
   display: "flex",
@@ -15,7 +15,7 @@ const Wrapper = glamorous.div({
   },
 });
 
-const FlexSquare = glamorous(Square)({
+const FlexSquare = styled(Square)({
   width: "calc( (100% / 3) - 20px)",
   margin: "10px",
   // "@media(max-width: 768px)": {

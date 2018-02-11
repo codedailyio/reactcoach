@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import glamorous from "glamorous";
+import styled from "react-emotion";
 
 import { Standard } from "./button";
 
-const Wrap = glamorous.div({
+const Wrap = styled.div({
   display: "flex",
   justifyContent: "flex-end",
   padding: "15px 10px",
@@ -11,17 +11,16 @@ const Wrap = glamorous.div({
   marginBottom: "15px",
 });
 
-const Left = glamorous.div({
+const Left = styled.div({
   display: "flex",
   flex: "1 0 auto",
 });
 
-const Logo = glamorous.img({
-  width: "200px",
-  height: "100%",
+const Logo = styled.img({
+  height: "90px",
   "@media(max-width: 768px)": {
-    width: "140px", 
-  }
+    height: "70px",
+  },
 });
 
 class Header extends Component {
@@ -29,7 +28,7 @@ class Header extends Component {
     return (
       <Wrap>
         <Left>
-          <Logo src="./static/logo.svg" />
+          <Logo src="/static/logo.svg" />
         </Left>
         <Standard>Get Started</Standard>
       </Wrap>

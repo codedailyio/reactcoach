@@ -14,19 +14,22 @@
     "alias": "reactcoach.com"
   },
   "dependencies": {
+    "babel-plugin-emotion": "^9.0.0",
     "dotenv": "^4.0.0",
+    "emotion": "^9.0.0",
+    "emotion-server": "^9.0.0",
     "exenv": "^1.2.2",
     "glamor": "^2.20.40",
-    "glamorous": "^4.2.0",
-    "good": "^7.2.0",
-    "good-console": "^6.4.0",
-    "hapi": "^16.5.2",
+    "good": "^7.3.0",
+    "good-console": "^7.0.0",
+    "hapi": "^17.2.0",
     "isomorphic-fetch": "^2.2.1",
     "jwt-decode": "^2.2.0",
-    "next": "^3.0.5",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-ga": "^2.2.0",
-    "react-twitter-widgets": "^1.4.0"
+    "next": "^4.2.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-emotion": "^9.0.0",
+    "react-ga": "^2.4.1",
+    "react-twitter-widgets": "^1.7.1"
   }
 }

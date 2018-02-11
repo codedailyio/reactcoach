@@ -1,9 +1,9 @@
 import React from "react";
-import glamorous from "glamorous";
+import styled from "react-emotion";
 
 import { red, dark } from "../colors";
 
-export const Standard = glamorous.button({
+export const Standard = styled.button({
   borderRadius: "30px",
   padding: "10px 15px",
   backgroundColor: red,
